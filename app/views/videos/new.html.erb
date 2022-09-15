@@ -1,6 +1,24 @@
-<%= form_with model: @video, local: true do |form| %>
-  <p>title</p><%= form.text_field :title %> <br>
-  <p>content</p><%= form.text_area :content %> <br>
-  <p>video</p><%= form.file_field :video %> <br>
-  <%= form.submit %>
-<% end %>
+<div class="container">
+  <div class="row my-5 mx-auto border">
+    <h4 class="col-10 my-3 mx-auto text-secondary">新規投稿を作成</h4>
+    <div class="col-10 mx-auto">
+    <%= form_with model: @video, local: true do |f| %>
+      <div class="row mt-3 justify-content-center">
+        <%= f.file_field :video, accept: "video/*", class: "col-md-7" %>
+      </div>
+
+      <div class="row mt-3 justify-content-center">
+        <%= f.text_field :title, class: "form-control textarea col-md-7", rows: "5", placeholder: "タイトルを入力" %>
+      </div>
+
+      <div class="row mt-3 justify-content-center">
+        <%= f.text_area :content, class: "form-control textarea col-md-7", rows: "5", placeholder: "キャプションを入力" %>
+      </div>
+
+      <div class="row my-5 justify-content-center">
+        <%= f.submit "シェア", class: "col-md-2 btn btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
