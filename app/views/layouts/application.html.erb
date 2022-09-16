@@ -11,9 +11,12 @@
   </head>
 
   <body>
-    <header>
+    <header id="header">
       <%= render "layouts/header"%>
     </header>
-    <%= yield %>
+    <div style="height: 80px;"></div>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
